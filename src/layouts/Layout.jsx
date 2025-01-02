@@ -4,11 +4,11 @@ import { Outlet } from "react-router"
 // rafce
 const Layout = () => {
   return (
-    <div>
+    <main className="container">
         <Navbar />
         <hr />
         <Outlet />
-    </div>
+    </main>
   )
 }
 export default Layout

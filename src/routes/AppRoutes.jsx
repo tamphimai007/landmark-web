@@ -2,6 +2,7 @@
 import Layout from "@/layouts/Layout";
 import LayoutAdmin from "@/layouts/LayoutAdmin";
 import About from "@/pages/About";
+import Camping from "@/pages/admin/Camping";
 import Dashboard from "@/pages/admin/Dashboard";
 import Manage from "@/pages/admin/Manage";
 import Home from "@/pages/Home";
@@ -22,6 +23,7 @@ const AppRoutes = () => {
         <Route path="admin" element={<LayoutAdmin />}>
           <Route index element={<Dashboard />} />
           <Route path="manage" element={<Manage />} />
+          <Route path="camping" element={<Camping />} />
         </Route>
 
         <Route path="*" element={<Notfound />} />

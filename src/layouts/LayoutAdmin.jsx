@@ -4,10 +4,10 @@ import { Outlet } from "react-router";
 // rafce
 const LayoutAdmin = () => {
   return (
-    <div>
+    <main className="container">
       <Navbar />
       <Outlet />
-    </div>
+    </main>
   );
 };
 export default LayoutAdmin;

@@ -9,7 +9,7 @@ const Navbar = () => {
     <nav>
       <div
         className="flex flex-col items-center 
-      py-4 px-8 justify-between sm:flex-row gap-4"
+      py-4 justify-between sm:flex-row gap-4"
       >
         <Logo />
         <Searchbar />
