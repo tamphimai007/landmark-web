@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { campingSchema } from "@/utils/schemas";
+import Buttons from "@/components/form/Buttons";
 
 
 
@@ -12,11 +13,14 @@ const Camping = () => {
   const { register, handleSubmit, formState } = useForm({
     resolver: zodResolver(campingSchema),
   });
-  const { errors } = formState;
+  const { errors, isSubmitting } = formState;
 
-
-  const jukkruSubmit = (data) => {
+  console.log(isSubmitting)
+  const jukkruSubmit = async(data) => {
     // code body
+    // test
+    await new Promise((resolve)=> setTimeout(resolve,3000))
+
     console.log(data);
   };
 
@@ -50,7 +54,11 @@ const Camping = () => {
               errors={errors}
             />
           </div>
-          <button>Submit</button>
+          <Buttons 
+          text="create camping" 
+          isPending={isSubmitting}
+          type="submit"
+          />
         </form>
       </div>
     </section>
