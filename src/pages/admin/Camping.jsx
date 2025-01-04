@@ -53,12 +53,13 @@ const Camping = () => {
               errors={errors}
             />
 
-            {/* Select */}
             <CategoryInput 
               name='category' 
               register={register} 
-              setValue={setValue} 
+              setValue={setValue}
             />
+
+
           </div>
           <Buttons
             text="create camping"
