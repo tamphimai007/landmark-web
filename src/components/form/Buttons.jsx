@@ -1,8 +1,7 @@
 import { Button } from "../ui/button";
 import { RotateCw } from 'lucide-react';
-const Buttons = ({ text,isPending,type }) => {
+const Buttons = ({ text,isPending }) => {
   return <Button 
-            type={type}
             disabled={isPending}
             className="capitalize mt-2">
                 {
