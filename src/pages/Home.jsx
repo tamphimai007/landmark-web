@@ -1,11 +1,10 @@
 // rafce
+import MapHome from "@/components/map/MapHome";
 
 const Home = () => {
   return (
     <div>
-      Home
-     
-
+      <MapHome />
     </div>
   );
 };

@@ -3,24 +3,32 @@ import Buttons from "@/components/form/Buttons";
 import FormInputs from "@/components/form/FormInputs";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import { profileSchema } from "@/utils/schemas";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { createProfile } from "@/api/profile";
+
+// clerk
+import { useAuth } from "@clerk/clerk-react";
+
 const Profile = () => {
   // javascript
-  const { register, handleSubmit, formState, setValue } = useForm();
+  // clerk
+  const { getToken, userId } = useAuth();
+
+  const { register, handleSubmit, formState, setValue } = useForm({
+    resolver: zodResolver(profileSchema),
+  });
   const { errors, isSubmitting } = formState;
 
   const jukkruSubmit = async (data) => {
     // code body
-    // test
-    // await new Promise((resolve) => setTimeout(resolve, 3000));
-
-    console.log(data);
-    await axios
-      .post("http://localhost:5000/api/profile", data)
+    const token = await getToken();
+    createProfile(token, data)
       .then((res) => {
-        console.log(res.data);
+        console.log(res);
       })
       .catch((err) => {
-        console.log("roitai err", err.response.data.message);
+        console.log(err);
       });
   };
   return (
