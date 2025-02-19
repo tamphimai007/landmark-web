@@ -35,8 +35,8 @@ const Mainmap = ({ register, location, setValue }) => {
   const DEFAULT_LOCATION = [13, 100];
   // || OR find first True
   // && AND find first false
-  const roitai = register && "ok";
-  console.log(roitai);
+  // const roitai = register && "ok";
+  // console.log(roitai);
 
   return (
     <div>
@@ -65,6 +65,12 @@ const Mainmap = ({ register, location, setValue }) => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+
+        {
+          location && <Marker position={location}></Marker>
+        }
+       
+
         <LocationMarker
           position={position}
           setPosition={setPosition}
