@@ -12,6 +12,7 @@ import { BrowserRouter, Routes, Route, Outlet } from "react-router";
 import ProtectRoute from "./ProtectRoute";
 import CampingDetail from "@/pages/user/CampingDetail";
 import Checkout from "@/pages/user/Checkout";
+import CheckoutComplete from "@/pages/user/CheckoutComplete";
 
 const AppRoutes = () => {
   return (
@@ -28,6 +29,7 @@ const AppRoutes = () => {
           <Route path="profile" element={<Profile />} />
           <Route path="camping/:id" element={<CampingDetail />} />
           <Route path="checkout/:id" element={<Checkout />} />
+          <Route path="complete/:session" element={<CheckoutComplete />} />
         </Route>
 
         {/* Private Admin*/}
