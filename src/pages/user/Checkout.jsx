@@ -7,7 +7,7 @@ import {
 import { useAuth } from "@clerk/clerk-react";
 import { checkOut } from "@/api/booking";
 import { useParams } from "react-router";
-const stripePromise = loadStripe("");
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
 
 const Checkout = () => {
   // Javascript
@@ -15,16 +15,16 @@ const Checkout = () => {
   const { id } = useParams();
 
   const fetchClientSecret = async () => {
-    const token = await getToken();
+    const token = await getToken()
     try {
       const res = await checkOut(token, id);
-      return res.data.clientSecret;
+      return res.data.clientSecret
     } catch (error) {
       console.log(error);
     }
   };
 
-  const options = { fetchClientSecret };
+  const options = {fetchClientSecret};
   return (
     <div id="checkout">
       <EmbeddedCheckoutProvider stripe={stripePromise} options={options}>
