@@ -1,7 +1,7 @@
 import useBookingStore from "@/store/booking-store";
 import { Card, CardTitle } from "../ui/card";
 import { calTotal } from "@/utils/booking";
-import { formatNumber } from "@/utils/formatNumber";
+import { formatNumber } from "@/utils/formats";
 import BookingConfirm from "./BookingConfirm";
 
 // rafce
