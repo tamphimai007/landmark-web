@@ -13,7 +13,6 @@ import {
 } from "@/components/ui/table";
 
 import { formatDate, formatNumber } from "@/utils/formats";
-import BookingPDF from "@/components/booking/BookingPDF";
 
 const MyOrders = () => {
   // JS
@@ -49,7 +48,6 @@ const MyOrders = () => {
             <TableHead>ราคารวม</TableHead>
             <TableHead>Check In</TableHead>
             <TableHead>Check Out</TableHead>
-            <TableHead>Invoice</TableHead>
           </TableRow>
         </TableHeader>
 
@@ -65,9 +63,6 @@ const MyOrders = () => {
                 <TableCell>{formatNumber(total)}</TableCell>
                 <TableCell>{formatDate(checkIn)}</TableCell>
                 <TableCell>{formatDate(checkOut)}</TableCell>
-                <TableCell>
-                  <BookingPDF booking={item} />
-                </TableCell>
               </TableRow>
             );
           })}
