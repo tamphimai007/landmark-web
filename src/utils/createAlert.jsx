@@ -7,3 +7,13 @@ export const createAlert = (icon, text) => {
     timer: 3000,
   });
 };
+
+export const createNofity = (icon, text) => {
+  return Swal.fire({
+    position: "top",
+    icon: icon,
+    title: text,
+    showConfirmButton: false,
+    timer: 1000,
+  });
+};
