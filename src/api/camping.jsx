@@ -23,10 +23,18 @@ export const addOrRemoveFavorite = async (token, data) => {
     },
   });
 };
+
 export const listFavorites = (token) => {
   return axios.get("http://localhost:5000/api/favorites", {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   });
+};
+
+// Filter
+export const filterCamping = (category, search) => {
+  return axios.get(
+    `http://localhost:5000/api/filter-camping?category=${category}&search=${search}`
+  );
 };

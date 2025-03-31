@@ -1,4 +1,9 @@
-import { addOrRemoveFavorite, listCamping, listFavorites } from "@/api/camping";
+import {
+  addOrRemoveFavorite,
+  filterCamping,
+  listCamping,
+  listFavorites,
+} from "@/api/camping";
 import { create } from "zustand";
 // Step 1 Create Store
 const campingStore = (set, get) => ({
@@ -51,6 +56,15 @@ const campingStore = (set, get) => ({
       const res = await listFavorites(token);
       // console.log(res.data.result);
       set({ favorites: res.data.result });
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  actionFilter: async (category = "", search = "") => {
+    try {
+      const res = await filterCamping(category, search);
+      // console.log("This is Zustand", res.data.result);
+      set({ campings: res.data.result });
     } catch (error) {
       console.log(error);
     }
