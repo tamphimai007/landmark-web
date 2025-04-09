@@ -34,8 +34,13 @@ const Layers = () => {
             return (
               <Marker key={item.id} position={[item.lat, item.lng]}>
                 <Popup>
-                  {item.title}
-                  <br /> {item.description}
+                  <div className="text-center">
+                    <p className="text-xl font-semibold">{item.title}</p>
+                    <img
+                      className="max-w-[300px] rounded-xl"
+                      src={item.secure_url}
+                    />
+                  </div>
                 </Popup>
                 <Tooltip>{item.title}</Tooltip>
               </Marker>
